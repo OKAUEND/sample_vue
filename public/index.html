@@ -11,5 +11,13 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <div id="app2">
+      <span v-bind:title = "message">
+        しばらくこの文字列の上にカーソルを置いてください。そうすれば現在の日付と時刻が表示されます。
+      </span>
+    </div>
+    <div id="app3">
+      <span v-if="seen">あなたは私を見ることができる？</span>
+    </div>
   </body>
 </html>
