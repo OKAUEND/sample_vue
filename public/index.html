@@ -19,5 +19,28 @@
     <div id="app3">
       <span v-if="seen">あなたは私を見ることができる？</span>
     </div>
+    <div id="app4">
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+    </div>
+    <div id="app5">
+      <p>{{message}}</p>
+      <button v-on:click="reverseMessage">反転！</button>
+    </div>
+    <div id="app6">
+      <p>{{message}}</p>
+      <input v-model='message'>
+    </div>
+    <div id="app7">
+      <ol>
+        <todo-item
+          v-for="item in groceryList"
+          v-bind:todo="item"
+          v-bind:key="item.id"></todo-item>
+      </ol>
+    </div>
   </body>
 </html>
