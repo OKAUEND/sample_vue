@@ -59,13 +59,16 @@
     <div id="demo">
       {{fullName}}
     </div>
-    <div id="watch-example">
+    <!-- <div id="watch-example">
       <p>
         Ask a yes/no question:
         <input type="text" v-model='question'>
       </p>
       <p>{{answer}}</p>
-    </div>
+    </div> -->
+    <div class="static" v-bind:class="{ active: IsActive,'text-danger' : hasError}"></div>
+    <div class="app21" v-bind:class="classObject"></div>
+    <div class="app22" v-bind:class="classObject"></div>
     <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
   </body>
