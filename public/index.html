@@ -69,6 +69,40 @@
     <div class="static" v-bind:class="{ active: IsActive,'text-danger' : hasError}"></div>
     <div class="app21" v-bind:class="classObject"></div>
     <div class="app22" v-bind:class="classObject"></div>
+    <div id="app23" v-bind:class="[activeClass, errorClass]"></div>
+    <div id="app24" v-bind:class="[isActive ? activeClass : ' ' ,errorClass]"></div>
+    <div id="app25" v-bind:style="styleObject"></div>
+    <div id="app30">
+      <h1 v-if="awesome">Vue is awesome!</h1>
+      <h1 v-else>Oh no ...</h1>
+    </div>
+    <div id="app31">
+    </div>
+    <div id="app32">
+      <div v-if="type === 'A'">
+        A
+      </div>
+      <div v-else-if="type === 'B'">
+        B
+      </div>
+      <div v-else-if="type === C">
+        C
+      </div>
+      <div v-else>
+        Not A/B/C
+      </div>
+    </div>
+    <div id="app33">
+      <template v-if="loginType === 'username'">
+        <label>Username</label>
+        <input type="text" placeholder="Enter your username">
+      </template>
+      <template v-else>
+        <label>Email</label>
+        <input type="text" placeholder="Enter your Email Addres">
+      </template>
+      <button v-on:click="change">変化</button>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
   </body>

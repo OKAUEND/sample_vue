@@ -214,3 +214,70 @@ new Vue({
     }
   }
 })
+
+new Vue({
+  el:"#app23",
+  data:{
+    activeClass:'active',
+    errorClass:'text-danger'
+  }
+})
+
+new Vue({
+  el:"#app24",
+  data:{
+    isActive:false,
+    activeClass:'active',
+    errorClass:'text-danger'
+  }
+})
+
+new Vue({
+  el:"#app25",
+  styleObject:{
+    color:'red',
+    fontSize:'13px'
+  }
+})
+
+new Vue({
+  el:"#app30",
+  data:{
+    awesome:true
+  }
+})
+
+import App31 from './App31.vue'
+new Vue({
+  el:'#app31',
+  components:{ App31 },
+  data:{
+    ok:true
+  }
+})
+
+new Vue({
+  el:'#app32',
+  data:{
+    type:'D'
+  },
+})
+
+new Vue({
+  el:'#app33',
+  data:{
+    loginType:'username'
+  },
+  methods:{
+    change:function(){
+      if(this.loginType === 'username')
+      {
+        this.loginType = ''
+      }
+      else
+      {
+        this.loginType = 'username'
+      }
+    }
+  }
+})
