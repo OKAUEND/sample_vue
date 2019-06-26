@@ -281,3 +281,78 @@ new Vue({
     }
   }
 })
+
+var example1 = new Vue({
+  el:"#example-1",
+  data:{
+    items:[
+      { message : 'Foo' },
+      { message : 'bar' },
+      { message : 'BOO' },
+      { message : 'REEE' },
+    ]
+  },
+  methods:{
+    addList:function()
+    {
+      this.items.push({ message : "BAZ"});
+    }
+  }
+})
+
+example1.items = example1.items.filter(function(item)
+{
+  return item.message.match(/Foo/)
+})
+
+let example2 = new Vue({
+  el:"#example-2",
+  data:{
+    parentMessage:'Parent',
+    items:[
+      {message:'Foo'},
+      {message:'bar'}
+    ]
+  }
+})
+
+new Vue({
+  el:'#v-for-object',
+  data:{
+    object:{
+      title:'How to do lists in Vue',
+      author:'Jane Doe',
+      publishedAr:'2016-04-10'
+    }
+  }
+})
+
+var vm45 = new Vue({
+  el:"#app45",
+  data:{
+    userProfile:{
+      name:'Akane'
+    }
+  }
+})
+
+// Vue.set(vm45.userProfile,'age',45)
+vm45.userProfile = Object.assign({},vm45.userProfile,{
+  age:27,
+  favoriteColor:'Vue Green'
+})
+
+new Vue({
+  el:'app46',
+  data:{
+    numbers:[1,2,3,4,5]
+  },
+  computed:{
+    evenNumbers:function()
+    {
+      return this.numbers.filter(function (number) {
+        return number % 2 === 0 ;
+      });
+    }
+  }
+})

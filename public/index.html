@@ -103,6 +103,39 @@
       </template>
       <button v-on:click="change">変化</button>
     </div>
+    <div id="app40">
+      <ul id="example-1">
+        <li v-for="item in items">
+          {{ item.message }}
+        </li>
+        <button v-on:click="addList">追加</button>
+      </ul>
+
+    </div>
+    <div id="app41">
+      <ul id="example-2">
+        <li v-for="(item,index) of items">
+          {{ parentMessage }} - {{ index }} - {{ item.message }}
+        </li>
+      </ul>
+    </div>
+    <div id="app42">
+      <ul id="v-for-object" class="demo">
+        <li v-for="(value,name,index) in object">
+          {{ index }}. {{ name }}:{{ value }}
+        </li>
+      </ul>
+    </div>
+    <div id="app43" v-for='item in items' v-bind:key="item.id">
+      <!-- content -->
+    </div>
+    <div>
+      <ul id="app45">
+        <li v-for>{{ userProfile }} </li>
+      </ul>
+      <button v-on:click="SetData">追加</button>
+    </div>
+    <div id='app46' v-for ='num in evenNumbers'> {{ num }}</div>
     <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
   </body>
