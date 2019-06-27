@@ -343,9 +343,9 @@ vm45.userProfile = Object.assign({},vm45.userProfile,{
 })
 
 new Vue({
-  el:'app46',
+  el:'#app46',
   data:{
-    numbers:[1,2,3,4,5]
+    numbers:[1,2,3,4,5,6,7,8,9,10]
   },
   computed:{
     evenNumbers:function()
@@ -356,3 +356,21 @@ new Vue({
     }
   }
 })
+
+let app51 = new Vue({
+  el:'#app51',
+  data:{
+    name:'Vue.js'
+  },
+  methods:{
+    greet:function(event){
+      alert('Hello' + this.name + '!')
+      if(event)
+      {
+        alert(event.target.tagName)
+      }
+    }
+  }
+})
+
+app51.greet()
