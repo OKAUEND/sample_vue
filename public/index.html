@@ -150,6 +150,45 @@
       <!-- greetはあらかじめ定義したメソッドの名前 -->
       <button v-on:click="greet">Greet</button>
     </div>
+    <div id="app52">
+      <button v-on:click="say('hi')">hi</button>
+      <button v-on:click="say('GoodBy')">GoodBy</button>
+      <button v-on:click="warn('Form cannot be submitted yet.',$event)">WARN</button>
+      <input type="text" v-on:keyup.enter="submit">
+      <input type="text" v-on:keyup.page-down="onPageDown">
+      <button @click.ctrl="onClick">A</button>
+      <button @click.ctrl.exact="onCtrlClick">B</button>
+      <button @click.exact="onClick">V</button>
+    </div>
+    <a href="" v-on:click.stop="doThis">停止</a>
+    <div id="app61">
+      <input type="text" v-model="message" placeholder="edit me">
+      <p>Message is : {{ message }}</p>
+      <span>Multiline message is :</span>
+      <p style="white-space:pre-line">{{multimessage}}</p>
+      <br>
+      <textarea name="" id="" cols="30" rows="10" v-model="multimessage" placeholder="add mutliple lines"></textarea>
+      <input type="checkbox" id="checkbox" v-model="checked">
+      <label for="checkbox">{{ checked }}</label>
+    </div>
+    <div id="app62">
+      <input type="checkbox" id="jack" value="Jack" v-model="CheckedNames">
+      <label for="jack">Jack</label>
+      <input type="checkbox" id="john" value="John" v-model="CheckedNames">
+      <label for="john">John</label>
+      <input type="checkbox" id="mike" value="mike" v-model="CheckedNames">
+      <label for="mike">Mike</label>
+      <br>
+      <span>Checked names: {{ CheckedNames }}</span>
+    </div>
+    <div id="app63">
+      <input type="radio" id="one" value="One" v-model="picked">
+      <label for="one">One</label>
+      <br>
+      <input type="radio" id="two" value="Two" v-model="picked">
+      <label for="Two">Two</label>
+      <span>Picked:{{ picked }}</span>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
   </body>

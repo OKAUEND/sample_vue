@@ -373,4 +373,59 @@ let app51 = new Vue({
   }
 })
 
-app51.greet()
+// app51.greet()
+
+new Vue({
+  el:'#app52',
+  methods:{
+    say:function(message){
+      alert(message);
+    },
+    warn:function(message,$event)
+    {
+      if($event)
+      {
+        $event.preventDefault();
+      }
+      alert(message)
+    },
+    submit:function()
+    {
+      alert('Enter')
+    },
+    onPageDown:function()
+    {
+      alert('PageDown')
+    },
+    onClick:function()
+    {
+      alert('Ctrl Alt Shift !!')
+    },
+    onCtrlClick:function()
+    {
+      alert('Ctrl Only!!')
+    }
+  }
+})
+
+new Vue({
+  el:"#app61",
+  data:{
+    message:"",
+    multimessage:"",
+    checked:false,
+  }
+})
+
+new Vue({
+  el:"#app62",
+  data:{
+    CheckedNames:[],
+  }
+})
+new Vue({
+  el:"#app63",
+  data:{
+    picked:""
+  }
+})
