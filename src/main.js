@@ -429,3 +429,78 @@ new Vue({
     picked:""
   }
 })
+
+new Vue({
+  el:"#app64",
+  data:
+  {
+    selected:[]
+  }
+})
+
+new Vue({
+  el:"#app65",
+  data: {
+    selected: 'A',
+    options: [
+      { text: 'One', value: 'A' },
+      { text: 'Two', value: 'B' },
+      { text: 'Three', value: 'C' }
+    ]
+  }
+})
+
+new Vue({
+  el:"#app66",
+  data:
+  {
+    toggle:false
+  }
+});
+
+Vue.component('button-counter',{
+  data:function(){
+    return{
+      count:0
+    }
+  },
+  template:'<button v-on:click="count++">クリック{{ count }} 回数</button>'
+})
+
+Vue.component('alert-box', {
+  template: `
+    <div class="demo-alert-box">
+      <strong>Error!</strong>
+      <slot></slot>
+    </div>
+  `
+})
+
+new Vue({
+  el:'#components-demo'
+})
+
+Vue.component('blog-post',{
+  props:['postTitle'],
+  props: {
+    title: String,
+    likes: Number,
+    isPublished: Boolean,
+    commentIds: Array,
+    author: Object,
+    callback: Function,
+    contactsPromise: Promise // or any other constructor
+  },
+  template:'<h3>{{ postTitle }}</h3>'
+})
+
+new Vue({
+  el:'#components-post',
+  data:{
+    post: {
+      id: 1,
+      title: 'My Journey with Vue'
+    }
+  },
+
+})

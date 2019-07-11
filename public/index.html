@@ -189,6 +189,62 @@
       <label for="Two">Two</label>
       <span>Picked:{{ picked }}</span>
     </div>
+    <div id="app64">
+      <select v-model="selected" multiple>
+        <option >A</option>
+        <option >B</option>
+        <option >C</option>
+      </select>
+      <br>
+      <span>selected : {{ selected }}</span>
+    </div>
+    <div id="app65">
+      <select v-model="selected">
+        <option v-for="option in options" v-bind:value="option.value">
+          {{ option.text }}
+        </option>
+      </select>
+      <span>Selected: {{ selected }}</span>
+    </div>
+    <div id="app66">
+      <input 
+        type="checkbox"
+        v-model:="toggle"
+        true-value="yes"
+        false-value=no>
+    </div>
+    <div id="components-demo">
+      <button-counter></button-counter>
+      <button-counter></button-counter>
+      <button-counter></button-counter>
+      <button-counter></button-counter>
+      <button-counter></button-counter>
+      <button-counter></button-counter>
+      <alert-box>
+        Something bad happened.
+      </alert-box>
+    </div>
+    <div id="components-post">
+      <blog-post post-title="Hello!"></blog-post>
+      <blog-post v-bind:title="post.title"></blog-post>
+      <blog-post v-bind:likes="42"></blog-post>
+      <blog-post is-published></blog-post>
+      <blog-post v-bind:is-published="false"></blog-post>
+      <blog-post v-bind:is-published="post.isPublished"></blog-post>
+      <blog-post v-bind:comment-ids="[234, 266, 273]"></blog-post>
+      <blog-post v-bind:comment-ids="post.commentIds"></blog-post>
+      <blog-post
+      v-bind:author="{
+        name: 'Veronica',
+        company: 'Veridian Dynamics'
+      }"
+    ></blog-post>
+    <blog-post v-bind="post"></blog-post>
+    <blog-post
+    v-bind:id="post.id"
+    v-bind:title="post.title"
+  ></blog-post>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
   </body>
