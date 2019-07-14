@@ -25,5 +25,6 @@ export default {
 .nav
 {
   display:flex;
+  background-color: #2e2e2e;
 }
 </style>
