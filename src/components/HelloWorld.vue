@@ -2,8 +2,11 @@
   <div class="hello">
     <h1>{{ title }}</h1>
     <hello-child>
-        <template v-slot:text>
+        <template v-slot:title>
           Hello Child!!!!
+        </template>
+        <template v-slot:text>
+          ハロー世界
         </template>
       </hello-child>
   </div>
