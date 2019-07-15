@@ -1,8 +1,8 @@
 <template>
     <div>
-        <p>{{title}}</p>
+        <h2><slot name="text"></slot></h2>
         <!-- ここにpropsに設定された値を表示留守 -->
-        <p>{{message}}</p>
+        <p>ハロー世界!</p>
     </div>
 </template>
 

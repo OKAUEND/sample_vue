@@ -1,7 +1,11 @@
 <template>
   <div class="hello">
     <h1>{{ title }}</h1>
-    <hello-child message="メッセージだよ!"></hello-child>
+    <hello-child>
+        <template v-slot:text>
+          Hello Child!!!!
+        </template>
+      </hello-child>
   </div>
 </template>
 
