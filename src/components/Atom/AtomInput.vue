@@ -1,5 +1,7 @@
 <template>
-        <input>
+        <input 
+            v-bind:class="ClassName"
+            v-on:input="onInput">
 </template>
 
 <script>
@@ -16,6 +18,10 @@ export default {
         },
         placeholder:{
             type:String
+        },
+        ClassName:{
+            type: String,
+            default:'defaultButton'
         }
     },
     methods:{
@@ -25,3 +31,15 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.SearchInput
+{
+    border-top: 1.5px solid #cfcfcf;
+    border-right:0px; 
+    border-bottom: 1.5px solid  #cfcfcf;
+    border-left: 1.5px solid  #cfcfcf;
+    border-radius: 5px 0px 0px 5px;
+    color:#cfcfcf;
+}
+</style>
