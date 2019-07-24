@@ -8,7 +8,7 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import SearchForm from './components/molecules/moleculesSearchForm.vue'
+import SearchForm from './components/Molecules/MoleculesSearchForm.vue'
 
 export default {
   name: 'app',
