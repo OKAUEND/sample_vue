@@ -44,12 +44,8 @@ export default {
 
 .SearchButton
 {
-    border-top: 1.5px solid #cfcfcf;
-    border-right: 1.5px solid  #cfcfcf;
-    border-bottom: 1.5px solid  #cfcfcf;
-    border-left: 0px;
-    border-radius: 0px 5px 5px 0px;
+    border: 0px;
+    border-radius: 0px 4px 4px 0px;
     color:#cfcfcf;
-    
 }
 </style>

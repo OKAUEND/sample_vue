@@ -35,11 +35,10 @@ export default {
 <style scoped>
 .SearchInput
 {
-    border-top: 1.5px solid #cfcfcf;
-    border-right:0px; 
-    border-bottom: 1.5px solid  #cfcfcf;
-    border-left: 1.5px solid  #cfcfcf;
-    border-radius: 5px 0px 0px 5px;
+    padding:10px;
+    border:0px;
+    border-radius: 4px 0px 0px 4px;
     color:#cfcfcf;
+    background-color:#424242;
 }
 </style>
