@@ -1,13 +1,13 @@
 <template>
     <div class="nav">
         <h2>{{title}}</h2>
-        <p class="hage" v-bind="Test">ハゲ</p>
+        <p class="hage">ハゲ</p>
     </div>
 </template>
 
 <script>
 export default {
-    name:"header",
+    name:"test-header",
   data:function(){
   return{
       title:'Hello Header!!'
