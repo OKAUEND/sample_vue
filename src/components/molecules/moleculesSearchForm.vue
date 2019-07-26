@@ -1,23 +1,24 @@
 <template>
-    <div class="SearchForm">
-            <atom-label class="Label_Large">
+    <div class="SearchForm"
+            v-bind:class="ClassObject">
+            <!-- <atom-label class="Label_Large">
                 <template v-slot:LabelText>
                     {{ TestText }}
                 </template>
-            </atom-label>
+            </atom-label> -->
             <atom-input
                 class="SearchInput"
                 v-model="sampleText"
                 >
             </atom-Input>
             <atom-button 
-                class="SearchButton SearchForm--Last"
+                class="SearchButton"
                 v-on:onClick="onEventClick"
                 >
                 <template
                     v-slot:ButtonText
                     >
-                    <div v-if="isClicked">
+                    <div v-if="ClassObject.isClicked">
                         Clicked!
                     </div>
                     <div v-else>
@@ -43,33 +44,38 @@ export default {
         return{
             sampleText:"",
             TestText:"TEST",
-            isClicked:false
+            ClassObject:{
+                isClicked:false,
+            }
         }
     },
     methods:
     {
         onEventClick:function()
         {
-            this.isClicked = !this.isClicked
-            alert(this.isClicked)
+            this.ClassObject.isClicked = !this.ClassObject.isClicked
+            alert(this.ClassObject.isClicked)
             this.$emit(this.sampleText)
         }
     },
 }
 </script>
 
-<style>
+<style scoped>
 .SearchForm
 {
     display: flex;
-    width:400px;
+    width:250px;
     height: 30px;
+    border:1px solid #00000000;
+    border-radius: 5px;
 }
 
-.SearchForm--Last
+.SearchForm:focus-within
 {
-    flex-basis:50px;
+    border:1px solid red;
 }
+
 </style>
 
 
