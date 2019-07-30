@@ -1,7 +1,11 @@
 <template>
         <input 
+            v-on:input="onInput"
+            v-bind:value="value"
+            v-bind:type="type"
+            v-bind:placeholder="placeholder"
             v-bind:class="ClassName"
-            v-on:input="onInput">
+            >
 </template>
 
 <script>
@@ -21,11 +25,12 @@ export default {
         },
         ClassName:{
             type: String,
-            default:'defaultButton'
+            default:'default'
         }
     },
     methods:{
         onInput(event){
+            // 入力された値をmodelへ$emitする
             this.$emit("input",event.target.value)
         }
     }
@@ -33,12 +38,16 @@ export default {
 </script>
 
 <style scoped>
-.SearchInput
+.default
 {
-    padding:10px;
     border:0px;
-    border-radius: 4px 0px 0px 4px;
-    color:#cfcfcf;
-    background-color:#424242;
+    background-color: #2c2c2c;
+    font-size:20px;
+    color:#d3d3d3;
+    box-sizing:border-box;
+    height: 100%;
+    width: 100%;
+    padding:5px;
 }
+
 </style>
