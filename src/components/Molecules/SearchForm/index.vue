@@ -1,10 +1,5 @@
 <template>
     <div class="SearchForm --medium">
-            <!-- <atom-label class="Label_Large">
-                <template v-slot:LabelText>
-                    {{ TestText }}
-                </template>
-            </atom-label> -->
             <atom-input
                 v-model="InputText"
                 class="SearchInput"
@@ -19,12 +14,6 @@
                 <template
                     v-slot:ButtonText
                     >
-                    <!-- <div v-if="ClassObject.isClicked">
-                        Clicked!
-                    </div>
-                    <div v-else>
-
-                    </div> -->
                     Search!
                 </template>
             </atom-Button>
@@ -72,30 +61,8 @@ export default {
     border:0px solid #00000000;
     border-radius: 5px;
     box-shadow: 0 1px 3px #000;
-}
-
-/* .SearchForm:focus-within
-{
-    border:2px solid red;
-} */
-
-/* Size */
-.--small
-{
-    width:300px;
-    height: 30px;
-}
-
-.--medium
-{
-    width:400px;
-    height:50px;
-}
-
-.--large
-{
-    width:250px;
-    height: 30px;
+    width: 100%;
+    height: 80%
 }
 
 </style>
