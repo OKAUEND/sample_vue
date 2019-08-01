@@ -1,12 +1,14 @@
 <template>
       <nav id="nav">
-        <div class="sideitem">
+        <div class="left_Side header_item">
           <h2>{{title}}</h2>
         </div>
-        <div class="headerlogo">
-
+        <div class="Header_logo">
+          <header-icon
+            v-bind:path=img_src>
+          </header-icon>
         </div>
-        <div class="sideitem">
+        <div class="header_item">
           <search-form>
           </search-form>
         </div>
@@ -15,16 +17,18 @@
 
 <script>
 import SearchForm from "@/components/Molecules/SearchForm/index.vue"
+import HeaderIcon from "@/components/Atom/AtomImage.vue"
 export default {
     name:"test-header",
     data:function(){
     return{
         title:'Hello Header!!',
-        img_src:'@/asset/logo.png'
+        img_src:require('@/static/logo.png')
       }
     },
     components:{
       SearchForm,
+      HeaderIcon
     }
 }
 </script>
@@ -34,6 +38,7 @@ export default {
 {
   display:flex;
   background-color: #2e2e2e;
+  justify-content: space-between;
   align-items: center;
   right: 0;
   left: 0;
@@ -52,13 +57,39 @@ h2
   justify-content: center;
   align-items: center;
   height: 100%;
+  padding:5px;
+  box-sizing: border-box;
 }
 
-#test
-{
-  width: 400px;
-  height: 50px;
-  background-color: azure;
+@media screen and (min-width: 1px) and (max-width: 780px) {
+  .left_Side
+  {
+    visibility: hidden;
+    position: absolute;
+  }
+  .Header_logo
+  {
+    width:75px;
+  }
+  .header_item
+  {
+    flex: 1;
+  }
+
+}
+
+@media screen and (min-width: 781px){
+  
+  .header_item
+  {
+    width:350px;
+  }
+
+  .Header_logo
+  {
+    flex: 1;
+  }
+
 }
 
 </style>
