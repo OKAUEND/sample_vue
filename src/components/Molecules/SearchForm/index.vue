@@ -6,7 +6,7 @@
                 </template>
             </atom-label> -->
             <atom-input
-                v-model="sampleText"
+                v-model="InputText"
                 class="SearchInput"
                 type="text"
                 placeholder="コメント"
@@ -43,7 +43,7 @@ export default {
     },
     data:function(){
         return{
-            sampleText:"",
+            InputText:"",
             TestText:"TEST",
             ButtonClass:{
                 'Button--green':false,
@@ -59,7 +59,7 @@ export default {
     {
         onEventClick:function()
         {
-            this.$emit(this.sampleText)
+            this.$emit(this.InputText)
         }
     },
 }
