@@ -1,14 +1,14 @@
 <template>
     <img 
         class="Test_radius"
-        v-bind:src="path">
+        v-bind:src="pathRequier()">
 </template>
 
 <script>
 export default {
     name:"atom-image",
     props:{
-        path:{
+        img_path:{
             type:String,
             default:""
         },
@@ -17,6 +17,11 @@ export default {
             default:"img_default"
         }
     },
+    methods:{
+        pathRequier:function(){
+            return require(`@/static/${this.img_path}`)
+        }
+    }
 }
 </script>
 
