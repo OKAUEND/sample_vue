@@ -1,11 +1,10 @@
 <template>
       <nav id="nav">
         <div class="left_Side header_item">
-          <h2>{{title}}</h2>
         </div>
         <div class="Header_logo">
           <header-icon
-            v-bind:path=img_src>
+            v-bind:img_path=img_src>
           </header-icon>
         </div>
         <div class="header_item">
@@ -23,7 +22,7 @@ export default {
     data:function(){
     return{
         title:'Hello Header!!',
-        img_src:require('@/static/logo.png')
+        img_src:'icon/logo.png'
       }
     },
     components:{
@@ -45,11 +44,14 @@ export default {
   height: 70px;
 }
 
+/* リセットCSSを実装したら消す */
 h2
 {
   margin:0;
   padding: 0;
 }
+/* ------------- */
+
 
 #nav > div
 {
