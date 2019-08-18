@@ -1,10 +1,12 @@
 <template>
     <div class="SimpleShow">
         <item-icon
-            v-bind:img_path="ImagePath">
+            v-bind:img_path="ImagePath"
+            class="--small --radius">
         </item-icon>
         <item-text
-            v-bind:Text="ItemName">
+            v-bind:Text="ItemName"
+            Level="4">
         </item-text>
     </div>
 </template>
@@ -37,5 +39,6 @@ export default {
     justify-content: center;
     align-items: center;
 }
+
 </style>
 

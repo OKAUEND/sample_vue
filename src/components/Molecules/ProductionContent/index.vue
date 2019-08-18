@@ -4,6 +4,7 @@
             <!-- 製作物のアイコン -->
             <item-image
                 v-bind:img_path=ItemData.ImagePath
+                class="--medium"
                 >
             </item-image>
         </div>
@@ -13,12 +14,12 @@
                 <!-- レベルとアイテム名 -->
                 <head-string
                     Text="Name"
-                    Level="3"
+                    Level="2"
                 >
                 </head-string>
                 <head-string
                     Text="ItemLevel"
-                    Level="4"
+                    Level="3"
                 >
                 </head-string>
             </div>

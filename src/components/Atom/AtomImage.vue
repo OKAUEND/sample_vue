@@ -32,25 +32,36 @@ export default {
 } */
 .Test_radius
 {
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
 }
 
 /* Size */
-/* .img--small
+.--small
 {
-
+    height: 30px;
+    width: 30px;
 }
 
-.img--medium
+.--medium
 {
-
+    height: 60px;
+    width: 60px;
 }
 
-.img--large
+.--large
 {
+    height: 80px;
+    width: 80px;
+}
 
-} */
+/* radius */
+.--radius
+{
+    border-radius: 50%;
+    /* border:1px solid white; */
+}
+
 </style>
 

@@ -4,7 +4,8 @@
         </div>
         <div class="Header_logo">
           <header-icon
-            v-bind:img_path=img_src>
+            v-bind:img_path=img_src
+            class="--medium --radius">
           </header-icon>
         </div>
         <div class="header_item">
