@@ -23,7 +23,6 @@
 <script>
 import AtomButton from '../../Atom/AtomButton.vue'
 import AtomInput from '../../Atom/AtomInput.vue'
-import AtomLabel from '../../Atom/AtomLabel.vue'
 export default {
     name:'mole-SearchForm',
     components:{
