@@ -6,14 +6,14 @@
         </item-icon>
         <item-text
             v-bind:Text="ItemName"
-            Level="4">
+            class="--small">
         </item-text>
     </div>
 </template>
 
 <script>
 import ItemIcon from '@/components/Atom/AtomImage.vue'
-import ItemText from '@/components/Atom/AtomHeadText.vue'
+import ItemText from '@/components/Atom/AtomSpan.vue'
 export default {
     name:"mole-simpleItem",
     components:{
