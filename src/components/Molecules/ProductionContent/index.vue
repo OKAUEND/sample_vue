@@ -44,7 +44,7 @@
 import HeadString from '@/components/Atom/AtomHeadText.vue'
 import SpanText from '@/components/Atom/AtomSpan.vue'
 import ItemImage from '@/components/Atom/AtomImage.vue'
-import ChildList from '@/components/Molecules/SimpleItem/index.vue'
+import ChildList from '@/components/Molecules/ChildrenItem/index.vue'
 export default {
     name:"mole-productioncontent",
     components:{
