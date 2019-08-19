@@ -10,20 +10,20 @@
         </div>
         <div class="cneter">
             <!-- レベルとアイテム名と素材 -->
-            <div>
+            <div class="ParentItem">
                 <!-- レベルとアイテム名 -->
                 <head-string
                     Text="Name"
                     Level="2"
                 >
                 </head-string>
-                <head-string
-                    Text="ItemLevel"
-                    Level="3"
+                <span-text
+                    v-bind:Text="CreatingItemLevel()"
+                    >
                 >
-                </head-string>
+                </span-text>
             </div>
-            <div class="" >
+            <div class="ChildrenList">
                 <!-- 素材の種類と素材数 -->
                 <div v-for="item of ItemData.ChildItem"
                 :key="item.id" class="childitems">
@@ -42,12 +42,14 @@
 
 <script>
 import HeadString from '@/components/Atom/AtomHeadText.vue'
+import SpanText from '@/components/Atom/AtomSpan.vue'
 import ItemImage from '@/components/Atom/AtomImage.vue'
 import ChildList from '@/components/Molecules/SimpleItem/index.vue'
 export default {
     name:"mole-productioncontent",
     components:{
         HeadString,
+        SpanText,
         ItemImage,
         ChildList
     },
@@ -105,10 +107,35 @@ export default {
                         id:2,
                         childimage:"icon/logo.png",
                         childname:"CHILD2"
-                    }
+                    },
+                    {
+                        id:3,
+                        childimage:"icon/logo.png",
+                        childname:"CHILD3"
+                    },
+                                    {
+                        id:4,
+                        childimage:"icon/logo.png",
+                        childname:"CHILD4"
+                    },
+                                    {
+                        id:5,
+                        childimage:"icon/logo.png",
+                        childname:"CHILD5"
+                    },
+                                    {
+                        id:6,
+                        childimage:"icon/logo.png",
+                        childname:"CHILD6"
+                    },
                 ]
                 // あとは後で作る
             }
+        }
+    },
+    methods:{
+        CreatingItemLevel:function(){
+            return `ITEM LEVEL${this.ItemData.ItemLevel}`
         }
     }
 }
@@ -122,9 +149,22 @@ export default {
     flex-direction: row;
 }
 
+.ParentItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.ChildrenList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .childitems{
     display: inline-block;
-    height: 20px;
+    /* height: 20px; */
 }
 
 .left{
