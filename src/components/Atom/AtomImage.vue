@@ -1,7 +1,8 @@
 <template>
     <img 
         class="Test_radius"
-        v-bind:src="pathRequier()">
+        v-bind:src="pathRequier()"
+        v-bind:class="ClassName">
 </template>
 
 <script>
