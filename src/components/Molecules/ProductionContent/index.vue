@@ -19,7 +19,7 @@
                 </head-string>
                 <span-text
                     v-bind:Text="CreatingItemLevel()"
-                    >
+                    class="--bottom"
                 >
                 </span-text>
             </div>
@@ -35,15 +35,33 @@
             </div>
         </div>
         <div class="right">
-            <!-- 追加ボタン -->
+            <div class="inputform">
+                <!-- 個数ボタン 
+                    対応1~999までとする-->
+                <atom-button>
+                </atom-button>
+                <atom-input
+                    v-model="inputData"
+                    ClassName="Countform"
+                    v-bind:Pattern="Pattern"
+                    v-bind:maxlength="maxlength">
+                </atom-input>
+                <atom-button>
+                </atom-button>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+// Atom
 import HeadString from '@/components/Atom/AtomHeadText.vue'
 import SpanText from '@/components/Atom/AtomSpan.vue'
 import ItemImage from '@/components/Atom/AtomImage.vue'
+import AtomButton from '@/components/Atom/AtomButton.vue'
+import AtomInput from '@/components/Atom/AtomInput.vue'
+
+// Molecules
 import ChildList from '@/components/Molecules/ChildrenItem/index.vue'
 export default {
     name:"mole-productioncontent",
@@ -51,93 +69,79 @@ export default {
         HeadString,
         SpanText,
         ItemImage,
+        AtomButton,
+        AtomInput,
         ChildList
     },
+    model:{
+        prop:"ItemData"
+    },
     props:{
-        // ItemData:{
-        //     ID:{
-        //         type:String,
-        //         default:"0"
-        //     },
-        //     Name:{
-        //         type:String,
-        //         default:"TEST"
-        //     },
-        //     ItemLevel:{
-        //         type:String,
-        //         default:"Level0"  
-        //     },
-        //     ImagePath:{
-        //         type:String,
-        //         default:"defined"
-        //     },
-        //     ChildItem:[
-        //         {
-        //             id:{
-        //                 type:String,
-        //                 default:""
-        //             },
-        //             childimage:{
-        //                 type:String,
-        //                 default:"icon/none.png"
-        //             },
-        //             childname:{
-        //                 type:String,
-        //                 default:"Default"
-        //             }
-        //         }
-        //     ]
-        //     // あとは後で作る
-        // }
+        ItemData:{
+            ID:{
+                type:Number,
+                default:0
+            },
+            Name:{
+                type:String,
+                default:"TEST"
+            },
+            ItemLevel:{
+                type:Number,
+                default:0 
+            },
+            ImagePath:{
+                type:String,
+                default:"defined"
+            },
+            ProductionCount:{
+                type:Number,
+                default:1
+            },
+            ChildItem:[
+                {
+                    id:{
+                        type:Number,
+                        default:0
+                    },
+                    childimage:{
+                        type:String,
+                        default:"icon/none.png"
+                    },
+                    childname:{
+                        type:String,
+                        default:"Default"
+                    }
+                }
+            ]
+            // あとは後で作る
+        }
     },
     data:function(){
         return{
-            ItemData:{
-                ID:1,
-                Name:"TEST",
-                ItemLevel:1,
-                ImagePath:"icon/logo.png",
-                ChildItem:[
-                    {
-                        id:1,
-                        childimage:"icon/logo.png",
-                        childname:"CHILD1"
-                    },
-                    {
-                        id:2,
-                        childimage:"icon/logo.png",
-                        childname:"CHILD2"
-                    },
-                    {
-                        id:3,
-                        childimage:"icon/logo.png",
-                        childname:"CHILD3"
-                    },
-                                    {
-                        id:4,
-                        childimage:"icon/logo.png",
-                        childname:"CHILD4"
-                    },
-                                    {
-                        id:5,
-                        childimage:"icon/logo.png",
-                        childname:"CHILD5"
-                    },
-                                    {
-                        id:6,
-                        childimage:"icon/logo.png",
-                        childname:"CHILD6"
-                    },
-                ]
-                // あとは後で作る
+            Pattern:"^[1-9][0-9]*",
+            maxlength:3
+        }
+    },
+    computed:{
+        inputData:{
+            get(){
+                return this.ItemData.ProductionCount
+            },
+            set(ProductionCount){
+                this.updateValue(Number(ProductionCount))
             }
         }
     },
     methods:{
         CreatingItemLevel:function(){
-            return `ITEM LEVEL${this.ItemData.ItemLevel}`
+            return `ITEM LEVEL ${this.ItemData.ItemLevel}`
+        },
+        updateValue(ProductionCount) {
+            this.$emit('input', { ...this.ItemData, ProductionCount })
         }
-    }
+    },
+
 }
 </script>
 
@@ -153,18 +157,29 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    height: 50%;
 }
 
 .ChildrenList{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    height: 50%;
 }
 
 .childitems{
     display: inline-block;
     /* height: 20px; */
+}
+
+.inputform{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 75%;
 }
 
 .left{
@@ -177,6 +192,9 @@ export default {
 
 .right{
     background-color: olive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 </style>
