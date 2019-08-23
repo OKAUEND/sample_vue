@@ -4,37 +4,67 @@
     <HelloWorld/>
     <head-text Text="Test" Level="2">
     </head-text>
-    <div 
-      v-for="TestItem of TestData"
-      :key="TestItem.id">
-      <item-show
-        v-bind:ImagePath="TestItem.path"
-        v-bind:ItemName="TestItem.name">
-      </item-show>
-    </div>
+    <show-content 
+      v-model="ItemData">
+    </show-content>
+    {{ ItemData.ProductionCount }}
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import HeadText from '@/components/Atom/AtomHeadText.vue'
-import ItemShow from '@/components/Molecules/SimpleItem/index.vue'
+import ShowContent from '@/components//Molecules/ProductionContent/index.vue'
+import 'normalize.css'
 
 export default {
   name: 'app',
   components: {
     HelloWorld,
     HeadText,
-    ItemShow
+    ShowContent
   },
   data:function(){
     return{
-      TestData:[
-        {id:1,path:"icon/logo.png",name:"Test1"},
-        {id:2,path:"icon/logo.png",name:"Test2"},
-        {id:3,path:"icon/logo.png",name:"Test3"},
-        {id:4,path:"icon/logo.png",name:"Test4"},
-      ]
+        ItemData:{
+          ID:1,
+          Name:"TEST",
+          ItemLevel:1,
+          ImagePath:"icon/logo.png",
+          ProductionCount:1,
+          ChildItem:[
+            {
+                id:1,
+                childimage:"icon/logo.png",
+                childname:"1"
+            },
+            {
+                id:2,
+                childimage:"icon/logo.png",
+                childname:"2"
+            },
+            {
+                id:3,
+                childimage:"icon/logo.png",
+                childname:"3"
+            },
+                            {
+                id:4,
+                childimage:"icon/logo.png",
+                childname:"4"
+            },
+                            {
+                id:5,
+                childimage:"icon/logo.png",
+                childname:"5"
+            },
+                            {
+                id:6,
+                childimage:"icon/logo.png",
+                childname:"6"
+            },
+          ]
+      }
     }
   }
 }
