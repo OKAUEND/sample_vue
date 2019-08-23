@@ -1,20 +1,25 @@
 <template>
         <input 
             v-on:input="onInput"
-            v-bind:value="value"
+            v-bind:value="propDate"
             v-bind:type="type"
             v-bind:placeholder="placeholder"
             v-bind:class="ClassName"
+            v-bind:Pattern="Pattern"
+            v-bind:maxlength="maxlength"
             >
 </template>
 
 <script>
 export default {
     name:"Atom-input",
+    model:{
+        prop:'propDate',
+        event:'input'
+    },
     props:{
-        value:{
-            type:String,
-            default:""
+        propDate:{
+            
         },
         type:{
             type:String,
@@ -26,7 +31,16 @@ export default {
         ClassName:{
             type: String,
             default:'default'
+        },
+        Pattern:{
+            type:String,
+            default:""
+        },
+        maxlength:{
+            type:String,
+            default:""
         }
+
     },
     methods:{
         onInput(event){
@@ -47,6 +61,15 @@ export default {
     box-sizing:border-box;
     height: 100%;
     width: 100%;
+    padding:5px;
+}
+
+.Countform{
+    border:0px;
+    background-color: #d3d3d3;
+    color: #2c2c2c;
+    height: 50%;
+    width: 30px;
     padding:5px;
 }
 
