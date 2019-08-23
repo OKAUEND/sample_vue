@@ -38,9 +38,6 @@ export default {
                 'Button--red':false,
                 'Button--small':true
             },
-            InputClass:{
-                
-            }
         }
     },
     methods:
