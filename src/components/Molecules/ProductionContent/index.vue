@@ -38,15 +38,28 @@
             <div class="inputform">
                 <!-- 個数ボタン 
                     対応1~999までとする-->
-                <atom-button>
+                <atom-button
+                    v-on:onClick="decrementValue">
+                    <template
+                        v-slot:ButtonText
+                        >
+                        -
+                    </template>
                 </atom-button>
                 <atom-input
                     v-model="inputData"
                     ClassName="Countform"
+                    v-bind:type="type"
                     v-bind:Pattern="Pattern"
                     v-bind:maxlength="maxlength">
                 </atom-input>
-                <atom-button>
+                <atom-button
+                    v-on:onClick="incrementValue">
+                    <template
+                        v-slot:ButtonText
+                        >
+                        +
+                    </template>
                 </atom-button>
             </div>
         </div>
@@ -120,7 +133,8 @@ export default {
     data:function(){
         return{
             Pattern:"^[1-9][0-9]*",
-            maxlength:3
+            maxlength:3,
+            type:"tel"
         }
     },
     computed:{
@@ -129,7 +143,7 @@ export default {
                 return this.ItemData.ProductionCount
             },
             set(ProductionCount){
-                this.updateValue(Number(ProductionCount))
+                this.updateEmitValue(Number(ProductionCount))
             }
         }
     },
@@ -137,8 +151,17 @@ export default {
         CreatingItemLevel:function(){
             return `ITEM LEVEL ${this.ItemData.ItemLevel}`
         },
-        updateValue(ProductionCount) {
+        updateEmitValue(ProductionCount) {
             this.$emit('input', { ...this.ItemData, ProductionCount })
+        },
+        incrementValue(){
+            this.inputData += 1
+        },
+        decrementValue(){
+            if(this.inputData > 1)
+            {
+                this.inputData -= 1
+            }
         }
     },
 
