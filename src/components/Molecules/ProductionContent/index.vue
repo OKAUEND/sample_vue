@@ -13,7 +13,7 @@
             <div class="ParentItem">
                 <!-- レベルとアイテム名 -->
                 <head-string
-                    Text="Name"
+                    v-bind:Text="ItemData.Name"
                     Level="2"
                 >
                 </head-string>
@@ -47,11 +47,11 @@
                     </template>
                 </atom-button>
                 <atom-input
-                    v-model="inputData"
+                    v-bind:value="input_count"
                     ClassName="Countform"
-                    v-bind:type="type"
                     v-bind:Pattern="Pattern"
-                    v-bind:maxlength="maxlength">
+                    v-bind:maxlength="maxlength"
+                    v-on:change="changeProductionCount">
                 </atom-input>
                 <atom-button
                     v-on:onClick="incrementValue">
@@ -95,7 +95,7 @@ export default {
                 type:Number,
                 default:0
             },
-            Name:{
+            ItemName:{
                 type:String,
                 default:"TEST"
             },
@@ -134,11 +134,10 @@ export default {
         return{
             Pattern:"^[1-9][0-9]*",
             maxlength:3,
-            type:"tel"
         }
     },
     computed:{
-        inputData:{
+        input_count:{
             get(){
                 return this.ItemData.ProductionCount
             },
@@ -151,16 +150,19 @@ export default {
         CreatingItemLevel:function(){
             return `ITEM LEVEL ${this.ItemData.ItemLevel}`
         },
+        changeProductionCount(value){
+            this.input_count = value
+        },
         updateEmitValue(ProductionCount) {
             this.$emit('input', { ...this.ItemData, ProductionCount })
         },
         incrementValue(){
-            this.inputData += 1
+            this.input_count += 1
         },
         decrementValue(){
-            if(this.inputData > 1)
+            if(this.input_count > 1)
             {
-                this.inputData -= 1
+                this.input_count -= 1
             }
         }
     },

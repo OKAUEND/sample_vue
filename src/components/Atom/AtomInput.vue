@@ -1,8 +1,7 @@
 <template>
         <input 
-            v-on:input="onInput"
-            v-bind:value="propDate"
-            v-bind:type="type"
+            type="text" 
+            v-model="input_text"
             v-bind:placeholder="placeholder"
             v-bind:class="ClassName"
             v-bind:Pattern="Pattern"
@@ -13,17 +12,9 @@
 <script>
 export default {
     name:"Atom-input",
-    model:{
-        prop:'propDate',
-        event:'input'
-    },
     props:{
-        propDate:{
-            
-        },
-        type:{
-            type:String,
-            default:"text"
+        value:{
+            type:[String, Number]
         },
         placeholder:{
             type:String
@@ -37,15 +28,18 @@ export default {
             default:""
         },
         maxlength:{
-            type:String,
-            default:""
+            type:Number,
         }
 
     },
-    methods:{
-        onInput(event){
-            // 入力された値をmodelへ$emitする
-            this.$emit("input",event.target.value)
+    computed:{
+        input_text:{
+            get:function(){
+                return this.value
+            },
+            set:function(value){
+                this.$emit("change",value)
+            }
         }
     }
 }
