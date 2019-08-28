@@ -21,8 +21,8 @@
 </template>
 
 <script>
-import AtomButton from '../../Atom/AtomButton.vue'
-import AtomInput from '../../Atom/AtomInput.vue'
+import AtomButton from '@/components/Atom/Button/AtomButton.vue'
+import AtomInput from '@/components/Atom/Input/AtomInputText.vue'
 export default {
     name:'mole-SearchForm',
     components:{

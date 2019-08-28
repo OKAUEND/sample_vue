@@ -17,7 +17,7 @@
 
 <script>
 import SearchForm from "@/components/Molecules/SearchForm/index.vue"
-import HeaderIcon from "@/components/Atom/AtomImage.vue"
+import HeaderIcon from "@/components/Atom/Image/AtomImage.vue"
 export default {
     name:"test-header",
     data:function(){

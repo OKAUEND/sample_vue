@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import ItemIcon from '@/components/Atom/AtomImage.vue'
-import ItemText from '@/components/Atom/AtomSpan.vue'
+import ItemIcon from '@/components/Atom/Image/AtomImage.vue'
+import ItemText from '@/components/Atom/Text/AtomSpan.vue'
 export default {
     name:"mole-simpleItem",
     components:{

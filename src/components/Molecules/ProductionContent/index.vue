@@ -68,11 +68,11 @@
 
 <script>
 // Atom
-import HeadString from '@/components/Atom/AtomHeadText.vue'
-import SpanText from '@/components/Atom/AtomSpan.vue'
-import ItemImage from '@/components/Atom/AtomImage.vue'
-import AtomButton from '@/components/Atom/AtomButton.vue'
-import AtomInput from '@/components/Atom/AtomInput.vue'
+import HeadString from '@/components/Atom//HeadText/AtomHeadText.vue'
+import SpanText from '@/components/Atom//Text/AtomSpan.vue'
+import ItemImage from '@/components/Atom//Image/AtomImage.vue'
+import AtomButton from '@/components/Atom//Button/AtomButton.vue'
+import AtomInput from '@/components/Atom//Input/AtomInputText.vue'
 
 // Molecules
 import ChildList from '@/components/Molecules/ChildrenItem/index.vue'
