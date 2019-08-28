@@ -23,8 +23,12 @@ export default {
 
 <style scoped>
 span{
-    display: block;
-    height: 100%;
+    display: inline-block;
+}
+
+/* 表示位置 */
+.--bottom{
+
 }
 /* Size */
 .--small{

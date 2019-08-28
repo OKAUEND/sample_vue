@@ -1,7 +1,7 @@
 <template>
     <label 
         v-bind:class="ClassName">
-            <slot name="LabelText">
+            <slot name="slotcontent">
             </slot>
     </label>
 </template>
